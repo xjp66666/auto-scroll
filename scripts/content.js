@@ -1,8 +1,8 @@
 let timer;
 
-function startScroll(){
+function startScroll(speed = 2){
     timer = setInterval(() => {
-        window.scrollBy(0, 2);
+        window.scrollBy(0, speed);
     }, 30)
 }
 
@@ -11,6 +11,12 @@ function stopScroll(){
 }
 
 chrome.runtime.onMessage.addListener((message) => {
-    if (message.action == "start") startScroll();
+    if (message.action == "start") {startScroll(message.speed)}
+
     if (message.action == "stop") stopScroll();
+
+    if (message.action == "changeSpeed"){
+        stopScroll();
+        startScroll(message.speed);
+    }
 })

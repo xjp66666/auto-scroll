@@ -11,7 +11,10 @@ function stopScroll(){
 }
 
 chrome.runtime.onMessage.addListener((message) => {
-    if (message.action == "start") {startScroll(message.speed)}
+    if (message.action == "start") {
+        stopScroll(); 
+        startScroll(message.speed)
+    }
 
     if (message.action == "stop") stopScroll();
 

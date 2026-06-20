@@ -1,5 +1,5 @@
 document.getElementById("start").addEventListener("click", () => {
-    const speed = document.getElementById("speed").value;
+    const speed = document.getElementById("speed").value || 2;
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "start", speed: speed});
     });

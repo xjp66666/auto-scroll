@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Auto Scroll",
   "version": "1.0",
-  "description": "Add the reading time to Chrome Extension documentation articles",
+  "description": "Simple and easy-to-use auto scroll extension for chrome",
 
   "icons": {
     "16": "images/icon-16.png",
